@@ -1,0 +1,56 @@
+[package]
+name = "axum-sql-viewer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation.workspace = true
+keywords.workspace = true
+categories.workspace = true
+description.workspace = true
+readme.workspace = true
+
+# Include frontend dist for crates.io publishing
+include = [
+    "src/**/*",
+    "frontend/dist/**/*",
+    "build.rs",
+    "Cargo.toml",
+    "LICENSE",
+    "README.md",
+]
+
+[features]
+default = ["sqlite", "postgres"]
+sqlite = ["sqlx/sqlite"]
+postgres = ["sqlx/postgres"]
+
+[dependencies]
+# Async runtime
+tokio = { workspace = true }
+
+# Web framework
+axum = { workspace = true }
+tower = { workspace = true }
+tower-http = { workspace = true }
+
+# Serialization
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+# Database
+sqlx = { workspace = true }
+
+# Utilities
+thiserror = { workspace = true }
+async-trait = { workspace = true }
+tracing = { workspace = true }
+
+# Frontend embedding
+include_dir = { workspace = true }
+mime_guess = { workspace = true }
+
+[build-dependencies]
+# For frontend build (will be added later if needed)

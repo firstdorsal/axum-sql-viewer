@@ -1,0 +1,24 @@
+{
+    "restoreTerminals.terminals": [
+        {
+            "splitTerminals": [
+                {
+                    "name": "frontend dev server",
+                    "commands": ["cd axum-sql-viewer/frontend", "pnpm dev"]
+                }
+            ]
+        },
+        {
+            "splitTerminals": [
+                {
+                    "name": "claude",
+                    "commands": ["claude"]
+                },
+                {
+                    "name": "example server",
+                    "commands": ["cd example-server", "cargo run"]
+                }
+            ]
+        }
+    ]
+}

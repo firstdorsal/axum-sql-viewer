@@ -1,0 +1,41 @@
+[workspace]
+members = ["axum-sql-viewer", "example-server"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.5"
+edition = "2021"
+license = "AGPL-3.0"
+authors = ["firstdorsal"]
+repository = "https://github.com/firstdorsal/axum-sql-viewer"
+homepage = "https://github.com/firstdorsal/axum-sql-viewer"
+documentation = "https://docs.rs/axum-sql-viewer"
+keywords = ["axum", "sql", "database", "viewer", "development"]
+categories = ["development-tools", "web-programming", "database"]
+description = "A development tool for viewing SQL tables in web browsers, easily integrable as an Axum layer"
+readme = "README.md"
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1", features = ["full"] }
+
+# Web framework
+axum = { version = "0.8.8", features = ["ws"] }
+tower = "0.5"
+tower-http = { version = "0.6.8", features = ["cors", "fs"] }
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1.0.146"
+
+# Database
+sqlx = { version = "0.8", features = ["runtime-tokio", "chrono", "uuid"] }
+
+# Utilities
+thiserror = "2"
+async-trait = "0.1"
+tracing = "0.1.44"
+
+# Frontend embedding
+include_dir = "0.7"
+mime_guess = "2"
